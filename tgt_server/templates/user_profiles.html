@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profiles</title>
+</head>
+<body>
+<h1>User Profiles</h1>
+
+<p>Filter: {{ search_value }} </p>
+<form action="" method=GET">
+    <label for="site-search">New filter:</label>
+    <input type="search" id="site-search" name="name"
+           aria-label="Search through site content"value="the new filter value.">
+    <input type="submit"/>
+</form>
+
+    <dd>{% for profile in profiles %}
+        <ul>
+            <li>
+                <a href="{{ profile.url}}">{{ profile.name }}</a>
+                &nbsp;:&nbsp;
+                <a href="{{ profile.url}}?edit=true">(edit)</a>
+            </li>
+        </ul>{% endfor %}
+    </dd>
+</body>
+</html>

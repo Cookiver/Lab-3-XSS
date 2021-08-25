@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+</head>
+<body>
+<h1>{{ profile.name }}</h1>
+    <ul>
+    {% for field_name, field_value in profile.fields.items() %}
+        <li>{{ field_name }}: {{ field_value  }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

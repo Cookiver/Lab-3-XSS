@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>User Profile</title>
+    </head>
+    <body>
+        <h1>{{ profile.name }}</h1>
+        <form action="" method="post">
+            <dt>
+                {% for field_name, field_value in profile.fields.items() %}
+                <dd>
+                    <ul>
+                        <li>
+                            {{ field_name }}:
+                            &nbsp;
+                            <input type="text" name="{{ field_name }}" value="{{ field_value }}"/>
+                        </li>
+                    </ul>
+                </dd>
+                {% endfor %}
+                <dd><input type="submit" name="update" value = "Update"/></dd>
+            </dt>
+        </form>
+    </body>
+</html>
